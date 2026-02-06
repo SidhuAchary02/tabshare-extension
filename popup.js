@@ -122,9 +122,23 @@ async function generateShareLink(group, tabs, buttonElement) {
   );
 
   // Use public URL (GitHub Pages)
-  const shareUrl = `https://sidhuachary02.github.io/tabshare-extension/index-import.html#${encoded}`;
+  const longUrl = `https://sidhuachary02.github.io/tabshare-extension/index-import.html#${encoded}`;
 
-  // Copy to clipboard immediately
+  // Create a short URL via TinyURL (no server required)
+  // Note: TinyURL free API endpoint returns plain text short URL.
+  let shareUrl = longUrl;
+  try {
+    const resp = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`);
+    if (resp.ok) {
+      const short = await resp.text();
+      if (short && short.startsWith('http')) shareUrl = short;
+    }
+  } catch (e) {
+    // If shortener fails, fall back to long URL
+    console.warn('TinyURL request failed, using long URL', e);
+  }
+
+  // Copy to clipboard immediately (short URL preferred)
   await navigator.clipboard.writeText(shareUrl);
   
   // Show feedback

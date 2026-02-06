@@ -5,9 +5,9 @@
   "description": "Share tab groups as a link",
   "permissions": ["tabs", "tabGroups", "clipboardWrite", "storage"],
   "icons": {
-    "16": "share-1-svgrepo.svg",
-    "48": "share-1-svgrepo.svg",
-    "128": "share-1-svgrepo.svg"
+    "16": "icons/tabshare16.png",
+    "48": "icons/tabshare48.png",
+    "128": "icons/tabshare128.png"
   },
   "action": {
     "default_popup": "popup.html"
