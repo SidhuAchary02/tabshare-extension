@@ -121,7 +121,8 @@ async function generateShareLink(group, tabs, buttonElement) {
     encodeURIComponent(JSON.stringify(payload))
   );
 
-  const shareUrl = `chrome-extension://${chrome.runtime.id}/import.html#${encoded}`;
+  // Use public URL (GitHub Pages)
+  const shareUrl = `https://siddhuachary02.github.io/tabshare-extension/#${encoded}`;
 
   // Copy to clipboard immediately
   await navigator.clipboard.writeText(shareUrl);

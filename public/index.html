@@ -13,6 +13,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      padding: 20px;
     }
     h2 {
       margin-bottom: 20px;
@@ -28,6 +29,9 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
+    }
+    button:hover {
+      background: #1d4ed8;
     }
     #groupTitle {
       font-size: 18px;
@@ -62,6 +66,23 @@
       color: #888;
       min-width: 20px;
     }
+    .install-note {
+      background: #1e3a5f;
+      border: 1px solid #3b82f6;
+      padding: 12px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 14px;
+      max-width: 600px;
+    }
+    .install-link {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .install-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -77,14 +98,21 @@
     </svg>
     Import Tab Group
   </h2>
-  <button id="open" style="margin-top: 20px;">Import All Tabs</button>
   
   <div id="preview" style="display: none; width: 100%; max-width: 600px;">
     <h3 id="groupTitle" style="margin: 20px 0 10px 0;"></h3>
     <div id="tabsList" style="background: #1a1a1a; border-radius: 8px; padding: 15px; max-height: 400px; overflow-y: auto; margin-bottom: 20px;"></div>
+    <button id="open">Import All Tabs</button>
   </div>
-  
 
-  <script src="import.js"></script>
+  <div id="noExtension" style="display: none; text-align: center;">
+    <p style="color: #888; margin-bottom: 15px;">To import this tab group, you need the TabShare extension.</p>
+    <a href="https://chrome.google.com/webstore/detail/tabshare/nhkmmfakleemmcikjahghhodkhoeleok" target="_blank" class="install-link">Install TabShare from Chrome Web Store</a>
+    <div class="install-note">
+      After installing, come back to this page and click "Import All Tabs" to add these tabs to your browser.
+    </div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>

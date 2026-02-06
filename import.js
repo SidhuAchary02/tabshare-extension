@@ -17,6 +17,19 @@
     return;
   }
 
+  // Display preview
+  document.getElementById("groupTitle").textContent = data.name || "Tab Group";
+  
+  const tabsList = document.getElementById("tabsList");
+  tabsList.innerHTML = data.tabs.map(tab => `
+    <div class="tab-item">
+      <span class="tab-icon">🔗</span>
+      <a href="${tab.url}" target="_blank" rel="noopener noreferrer">${tab.title}</a>
+    </div>
+  `).join("");
+  
+  document.getElementById("preview").style.display = "block";
+
   document.getElementById("open").onclick = async () => {
     console.log("Button clicked");
     if (typeof chrome === 'undefined' || !chrome.tabs) {
