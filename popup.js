@@ -122,7 +122,7 @@ async function generateShareLink(group, tabs, buttonElement) {
   );
 
   // Use public URL (GitHub Pages)
-  const shareUrl = `https://siddhuachary02.github.io/tabshare-extension/index-import.html#${encoded}`;
+  const shareUrl = `https://sidhuachary02.github.io/tabshare-extension/index-import.html#${encoded}`;
 
   // Copy to clipboard immediately
   await navigator.clipboard.writeText(shareUrl);
