@@ -3,6 +3,7 @@
   "name": "TabShare",
   "version": "1.3.0",
   "description": "Share tab groups as a link",
+  "homepage_url": "https://github.com/SidhuAchary02/tabshare-extension",
   "permissions": ["tabs", "tabGroups", "clipboardWrite", "storage"],
   "icons": {
     "16": "icons/tabshare16.png",

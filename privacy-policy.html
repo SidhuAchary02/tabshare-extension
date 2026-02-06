@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TabShare - Privacy Policy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #2563eb;
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #1e40af;
+      margin-top: 30px;
+    }
+    h3 {
+      color: #1e40af;
+      margin-top: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    .highlight {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-left: 4px solid #2563eb;
+      margin: 20px 0;
+    }
+    .last-updated {
+      color: #666;
+      font-style: italic;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy for TabShare</h1>
+    
+    <p><strong>Effective Date:</strong> February 6, 2026</p>
+
+    <h2>1. Introduction</h2>
+    <p>
+      TabShare ("we," "us," "our," or "Extension") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.
+    </p>
+
+    <h2>2. Information We Collect</h2>
+    
+    <h3>2.1 Web History Data</h3>
+    <p>
+      The TabShare extension collects and temporarily stores the following information from your browser:
+    </p>
+    <ul>
+      <li><strong>Page URLs:</strong> The web addresses (URLs) of pages in your tab groups</li>
+      <li><strong>Page Titles:</strong> The titles of the web pages you have grouped</li>
+      <li><strong>Group Names:</strong> Custom names you assign to tab groups</li>
+      <li><strong>Group Colors:</strong> Color codes you assign to organize tab groups</li>
+      <li><strong>Timestamps:</strong> The date and time when you share a tab group</li>
+    </ul>
+
+    <div class="highlight">
+      <strong>Important:</strong> This data is collected <strong>only when you explicitly click the "Share" button</strong> to generate a share link. We do not automatically collect or monitor your browsing history.
+    </div>
+
+    <h3>2.2 Local Storage</h3>
+    <p>
+      The extension stores the following data locally on your device using Chrome's Storage API:
+    </p>
+    <ul>
+      <li>Share history (last 10 shared tab groups)</li>
+      <li>Timestamps of shares</li>
+      <li>Tab counts and group metadata</li>
+    </ul>
+    <p>
+      This data is stored <strong>only on your device</strong> and is <strong>never transmitted to any server</strong> unless you voluntarily use the share feature.
+    </p>
+
+    <h2>3. How We Use Your Information</h2>
+    
+    <p>We use the collected information for the following purposes:</p>
+    <ul>
+      <li><strong>Share Functionality:</strong> To encode your tab group data into shareable links that can be sent to other users</li>
+      <li><strong>Share History:</strong> To maintain a local record of the tab groups you've shared for quick access and management</li>
+      <li><strong>Extension Functionality:</strong> To display your tab groups and allow you to import shared tab groups</li>
+    </ul>
+
+    <h2>4. Data Storage and Transmission</h2>
+
+    <h3>4.1 Local Storage</h3>
+    <p>
+      All data collected by the extension is stored <strong>locally on your device</strong> using the Chrome Storage API. This data remains on your device and is not synchronized with any remote server unless you explicitly choose to share it.
+    </p>
+
+    <h3>4.2 Shared Links</h3>
+    <p>
+      When you generate a share link:
+    </p>
+    <ul>
+      <li>Your tab data is <strong>encoded into the URL fragment</strong> (the part after #)</li>
+      <li>The link is <strong>shortened using TinyURL</strong> for convenience</li>
+      <li>The full URL (including your encoded tab data) is transmitted to TinyURL's servers to create the short link</li>
+      <li>The shortened link can then be shared with others</li>
+    </ul>
+
+    <div class="highlight">
+      <strong>Privacy Note:</strong> When you use the URL shortening feature, TinyURL may be able to see the full URL including your encoded tab data. If you are concerned about sharing encoded data with third parties, you can share the long URL directly instead.
+    </div>
+
+    <h3>4.3 Import Pages</h3>
+    <p>
+      When a recipient opens a shared import link:
+    </p>
+    <ul>
+      <li>The link is hosted on GitHub Pages (https://siddhuachary02.github.io/tabshare-extension/)</li>
+      <li>GitHub may log standard HTTP request data (IP address, timestamp, etc.)</li>
+      <li>The tab data itself is decoded in the recipient's browser and is not stored on our servers</li>
+    </ul>
+
+    <h2>5. Data Sharing and Disclosure</h2>
+
+    <p>
+      We <strong>do not sell, trade, or rent</strong> your information to third parties. Your data is shared only:
+    </p>
+    <ul>
+      <li><strong>With TinyURL:</strong> When you use the URL shortening feature (the encoded URL is transmitted)</li>
+      <li><strong>With GitHub:</strong> When a shared link is accessed via GitHub Pages (standard HTTP logs)</li>
+      <li><strong>With the recipient:</strong> Only if you explicitly share a link with them</li>
+    </ul>
+
+    <h2>6. Data Retention</h2>
+
+    <ul>
+      <li><strong>Local History:</strong> Stored on your device; you can delete individual entries or all history at any time using the extension's delete button</li>
+      <li><strong>Shared Links:</strong> Once a share link is created, we have no control over it. The recipient can access and import the data indefinitely</li>
+      <li><strong>TinyURL Links:</strong> Managed by TinyURL according to their privacy policy</li>
+      <li><strong>GitHub Pages Logs:</strong> Managed by GitHub according to their privacy policy</li>
+    </ul>
+
+    <h2>7. User Controls</h2>
+
+    <p>You have full control over your data:</p>
+    <ul>
+      <li><strong>Delete History:</strong> Remove individual or all share history entries from the extension</li>
+      <li><strong>No Auto-Collection:</strong> The extension only collects data when you explicitly click "Share"</li>
+      <li><strong>No Account Required:</strong> The extension works entirely locally without requiring any account or login</li>
+      <li><strong>No Tracking:</strong> We do not track your browsing habits or monitor your activity</li>
+    </ul>
+
+    <h2>8. Security</h2>
+
+    <p>
+      We implement reasonable security measures:
+    </p>
+    <ul>
+      <li>Data is encoded (base64-encoded) in URLs, not encrypted—treat share links as semi-sensitive</li>
+      <li>All data transmission occurs over HTTPS when sharing links</li>
+      <li>Local data is stored using Chrome's secure Storage API</li>
+      <li>The extension has no network access except when generating shortened URLs</li>
+    </ul>
+
+    <div class="highlight">
+      <strong>Security Note:</strong> The encoding in share links is not true encryption. Do not share links containing sensitive information. Treat them as you would any URL with data in it.
+    </div>
+
+    <h2>9. Children's Privacy</h2>
+
+    <p>
+      The TabShare extension is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have collected information from a child under 13, we will delete such data immediately.
+    </p>
+
+    <h2>10. Third-Party Services</h2>
+
+    <h3>10.1 TinyURL</h3>
+    <p>
+      When you use the URL shortening feature, your encoded URL is sent to TinyURL. Please review TinyURL's privacy policy at https://tinyurl.com/privacy.php
+    </p>
+
+    <h3>10.2 GitHub Pages</h3>
+    <p>
+      Share import pages are hosted on GitHub Pages. Please review GitHub's privacy policy at https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
+    </p>
+
+    <h2>11. Changes to This Privacy Policy</h2>
+
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify users of any material changes by updating the "Effective Date" at the top of this policy. Your continued use of the extension following the posting of revised Privacy Policy means you accept and agree to the changes.
+    </p>
+
+    <h2>12. Contact Us</h2>
+
+    <p>
+      If you have questions about this Privacy Policy or our privacy practices, please contact us at:
+    </p>
+    <ul>
+      <li><strong>GitHub Repository:</strong> https://github.com/SidhuAchary02/tabshare-extension</li>
+      <li><strong>Issues:</strong> You can file issues or contact via the GitHub repository</li>
+    </ul>
+
+    <h2>13. Compliance</h2>
+
+    <p>
+      This extension complies with the Chrome Web Store Developer Program Policies and privacy requirements, including:
+    </p>
+    <ul>
+      <li>Transparent disclosure of data collection practices</li>
+      <li>No unauthorized data transmission</li>
+      <li>Secure handling of user information</li>
+      <li>Respect for user privacy and control</li>
+    </ul>
+
+    <div class="last-updated">
+      <p><strong>Last Updated:</strong> February 6, 2026</p>
+      <p>This Privacy Policy is effective immediately and applies to all current and future users of the TabShare extension.</p>
+    </div>
+  </div>
+</body>
+</html>
