@@ -42,8 +42,4 @@ cd tabshare-extension
 
 ```
 
-## Enable Developer option in chrome extendion store
-
-#### then load packed on store, u are ready.
-
-it will work to share others, once publish on extension store.
+[privacy policy](https://siddhuachary02.github.io/tabshare-extension/privacy-policy.html)
