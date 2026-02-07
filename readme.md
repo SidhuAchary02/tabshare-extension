@@ -42,4 +42,4 @@ cd tabshare-extension
 
 ```
 
-[privacy policy](https://siddhuachary02.github.io/tabshare-extension/privacy-policy.html)
+[privacy policy](https://sidhuachary02.github.io/tabshare-extension/privacy/)
