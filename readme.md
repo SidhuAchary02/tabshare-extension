@@ -1,11 +1,8 @@
-> ⚠️ **Notice:** The extension is currently being re-published to the Chrome Web Store.  
-> It may take **3–4 days** for the extension to become live again.  
-> Please wait until the review process is completed. Thank you for your patience!
-
-
 # TabShare – Share Browser Tab Groups via Link
 
 TabShare is a lightweight Chrome / Brave extension that lets you share a browser **tab group** as a link and restore it later.
+
+##download [tabshare](https://chromewebstore.google.com/detail/TabShare/ackkgbdepcbjjlbfidccojaodiikiold)
 
 ### Extension
 ![TabShare popup](imgs/tabshare-release.jpeg)
@@ -39,12 +36,5 @@ It works locally using **Load unpacked** (no Chrome/Brave Web Store required).
 - Prevents duplicate entries in history
 
 ---
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/SidhuAchary02/tabshare-extension.git
-cd tabshare-extension
-
-```
 
 [privacy policy](https://sidhuachary02.github.io/tabshare-extension/privacy/)
