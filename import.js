@@ -32,25 +32,42 @@
 
   document.getElementById("open").onclick = async () => {
     console.log("Button clicked");
-    if (typeof chrome === 'undefined' || !chrome.tabs) {
-      alert("This page must be opened as a Chrome extension page.");
+    
+    if (typeof chrome === 'undefined') {
+      alert("TabShare extension is not installed.");
       return;
     }
-    const tabIds = [];
-    for (const tab of data.tabs) {
-      try {
-        const newTab = await chrome.tabs.create({ url: tab.url, active: false });
-        tabIds.push(newTab.id);
-      } catch (e) {
-        console.error("Failed to create tab:", tab.url, e);
+
+    // Send message via postMessage to content script
+    window.postMessage(
+      {
+        type: "TABSHARE_IMPORT_REQUEST",
+        tabs: data.tabs,
+        groupName: data.name,
+        groupColor: data.color,
+      },
+      "*"
+    );
+
+    // Wait for response from content script
+    const handleResponse = (event) => {
+      if (event.data.type === "TABSHARE_IMPORT_RESPONSE") {
+        window.removeEventListener("message", handleResponse);
+        if (event.data.success) {
+          alert("Tab group imported successfully!");
+          window.close();
+        } else {
+          alert("Failed to import tabs. Try again.");
+        }
       }
-    }
+    };
 
-    if (tabIds.length > 0) {
-      const groupId = await chrome.tabs.group({ tabIds });
-      await chrome.tabGroups.update(groupId, { title: data.name, color: data.color });
-    }
-
-    window.close();
+    window.addEventListener("message", handleResponse);
+    
+    // Timeout after 5 seconds
+    setTimeout(() => {
+      window.removeEventListener("message", handleResponse);
+      alert("Failed to import tabs. Make sure the TabShare extension is installed and enabled.");
+    }, 5000);
   };
 })();

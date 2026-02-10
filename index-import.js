@@ -19,7 +19,7 @@
   }
 
   // Check if extension is available
-  const hasExtension = typeof chrome !== 'undefined' && chrome.tabs;
+  const hasExtension = typeof chrome !== 'undefined' && chrome.runtime;
   
   // Display preview
   document.getElementById("groupTitle").textContent = data.name || "Tab Group";
@@ -38,23 +38,43 @@
 
     document.getElementById("open").onclick = async () => {
       console.log("Import button clicked");
-      const tabIds = [];
-      for (const tab of data.tabs) {
-        try {
-          const newTab = await chrome.tabs.create({ url: tab.url, active: false });
-          tabIds.push(newTab.id);
-        } catch (e) {
-          console.error("Failed to create tab:", tab.url, e);
+      
+      if (typeof chrome === 'undefined') {
+        alert("TabShare extension is not installed.");
+        return;
+      }
+
+      // Send message via postMessage to content script
+      window.postMessage(
+        {
+          type: "TABSHARE_IMPORT_REQUEST",
+          tabs: data.tabs,
+          groupName: data.name,
+          groupColor: data.color,
+        },
+        "*"
+      );
+
+      // Wait for response from content script
+      const handleResponse = (event) => {
+        if (event.data.type === "TABSHARE_IMPORT_RESPONSE") {
+          window.removeEventListener("message", handleResponse);
+          if (event.data.success) {
+            alert("Tab group imported successfully!");
+            window.close();
+          } else {
+            alert("Failed to import tabs. Try again.");
+          }
         }
-      }
+      };
 
-      if (tabIds.length > 0) {
-        const groupId = await chrome.tabs.group({ tabIds });
-        await chrome.tabGroups.update(groupId, { title: data.name, color: data.color });
-        alert("Tab group imported successfully!");
-      }
-
-      window.close();
+      window.addEventListener("message", handleResponse);
+      
+      // Timeout after 5 seconds
+      setTimeout(() => {
+        window.removeEventListener("message", handleResponse);
+        alert("Failed to import tabs. Make sure the TabShare extension is installed and enabled.");
+      }, 5000);
     };
   } else {
     showNoExtension();
