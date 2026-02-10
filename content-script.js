@@ -9,24 +9,37 @@ window.addEventListener("message", (event) => {
     console.log("Content script received import request:", event.data);
     
     // Send message to service worker
-    chrome.runtime.sendMessage(
-      {
-        action: "importTabs",
-        tabs: event.data.tabs,
-        groupName: event.data.groupName,
-        groupColor: event.data.groupColor,
-      },
-      (response) => {
-        console.log("Service worker response:", response);
-        // Send response back to web page
-        window.postMessage(
-          {
-            type: "TABSHARE_IMPORT_RESPONSE",
-            success: response?.success,
-          },
-          "*"
-        );
-      }
-    );
+    try {
+      chrome.runtime.sendMessage(
+        {
+          action: "importTabs",
+          tabs: event.data.tabs,
+          groupName: event.data.groupName,
+          groupColor: event.data.groupColor,
+        },
+        (response) => {
+          console.log("Service worker response:", response);
+          // Send response back to web page
+          window.postMessage(
+            {
+              type: "TABSHARE_IMPORT_RESPONSE",
+              success: response?.success || false,
+              error: response?.error,
+            },
+            "*"
+          );
+        }
+      );
+    } catch (error) {
+      console.error("Error sending message to service worker:", error);
+      window.postMessage(
+        {
+          type: "TABSHARE_IMPORT_RESPONSE",
+          success: false,
+          error: error.message,
+        },
+        "*"
+      );
+    }
   }
 });

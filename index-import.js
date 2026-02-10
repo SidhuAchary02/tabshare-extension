@@ -18,9 +18,6 @@
     return;
   }
 
-  // Check if extension is available
-  const hasExtension = typeof chrome !== 'undefined' && chrome.runtime;
-  
   // Display preview
   document.getElementById("groupTitle").textContent = data.name || "Tab Group";
   
@@ -32,54 +29,49 @@
     </div>
   `).join("");
   
-  if (hasExtension) {
-    document.getElementById("preview").style.display = "block";
-    document.getElementById("noExtension").style.display = "none";
+  document.getElementById("preview").style.display = "block";
+  document.getElementById("noExtension").style.display = "none";
 
-    document.getElementById("open").onclick = async () => {
-      console.log("Import button clicked");
-      
-      if (typeof chrome === 'undefined') {
-        alert("TabShare extension is not installed.");
-        return;
-      }
+  document.getElementById("open").onclick = async () => {
+    console.log("Import button clicked, sending message to content script");
+    
+    // Send message via postMessage to content script
+    window.postMessage(
+      {
+        type: "TABSHARE_IMPORT_REQUEST",
+        tabs: data.tabs,
+        groupName: data.name,
+        groupColor: data.color,
+      },
+      "*"
+    );
 
-      // Send message via postMessage to content script
-      window.postMessage(
-        {
-          type: "TABSHARE_IMPORT_REQUEST",
-          tabs: data.tabs,
-          groupName: data.name,
-          groupColor: data.color,
-        },
-        "*"
-      );
+    console.log("Message sent, waiting for response...");
 
-      // Wait for response from content script
-      const handleResponse = (event) => {
-        if (event.data.type === "TABSHARE_IMPORT_RESPONSE") {
-          window.removeEventListener("message", handleResponse);
-          if (event.data.success) {
-            alert("Tab group imported successfully!");
-            window.close();
-          } else {
-            alert("Failed to import tabs. Try again.");
-          }
-        }
-      };
-
-      window.addEventListener("message", handleResponse);
-      
-      // Timeout after 5 seconds
-      setTimeout(() => {
+    // Wait for response from content script
+    const handleResponse = (event) => {
+      console.log("Received message:", event.data);
+      if (event.data.type === "TABSHARE_IMPORT_RESPONSE") {
         window.removeEventListener("message", handleResponse);
-        alert("Failed to import tabs. Make sure the TabShare extension is installed and enabled.");
-      }, 5000);
+        clearTimeout(timeoutId);
+        if (event.data.success) {
+          alert("Tab group imported successfully!");
+          window.close();
+        } else {
+          alert("Failed to import tabs: " + (event.data.error || "Unknown error"));
+        }
+      }
     };
-  } else {
-    showNoExtension();
-    document.getElementById("preview").style.display = "block";
-  }
+
+    window.addEventListener("message", handleResponse);
+    
+    // Timeout after 10 seconds
+    const timeoutId = setTimeout(() => {
+      window.removeEventListener("message", handleResponse);
+      console.error("Timeout waiting for extension response");
+      alert("Failed to import tabs. Make sure the TabShare extension is installed and enabled.");
+    }, 10000);
+  };
 
   function showNoExtension() {
     document.getElementById("noExtension").style.display = "block";

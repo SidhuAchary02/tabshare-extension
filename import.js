@@ -31,13 +31,8 @@
   document.getElementById("preview").style.display = "block";
 
   document.getElementById("open").onclick = async () => {
-    console.log("Button clicked");
+    console.log("Button clicked, sending message to content script");
     
-    if (typeof chrome === 'undefined') {
-      alert("TabShare extension is not installed.");
-      return;
-    }
-
     // Send message via postMessage to content script
     window.postMessage(
       {
@@ -49,25 +44,30 @@
       "*"
     );
 
+    console.log("Message sent, waiting for response...");
+
     // Wait for response from content script
     const handleResponse = (event) => {
+      console.log("Received message:", event.data);
       if (event.data.type === "TABSHARE_IMPORT_RESPONSE") {
         window.removeEventListener("message", handleResponse);
+        clearTimeout(timeoutId);
         if (event.data.success) {
           alert("Tab group imported successfully!");
           window.close();
         } else {
-          alert("Failed to import tabs. Try again.");
+          alert("Failed to import tabs: " + (event.data.error || "Unknown error"));
         }
       }
     };
 
     window.addEventListener("message", handleResponse);
     
-    // Timeout after 5 seconds
-    setTimeout(() => {
+    // Timeout after 10 seconds
+    const timeoutId = setTimeout(() => {
       window.removeEventListener("message", handleResponse);
+      console.error("Timeout waiting for extension response");
       alert("Failed to import tabs. Make sure the TabShare extension is installed and enabled.");
-    }, 5000);
+    }, 10000);
   };
 })();
