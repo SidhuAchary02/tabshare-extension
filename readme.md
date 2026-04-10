@@ -19,8 +19,6 @@ This project was built to understand:
 - Browser security boundaries
 - Sharing state without a backend
 
-It works locally using **Load unpacked** (no Chrome/Brave Web Store required).
-
 ---
 
 ## ✨ Features
