@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TabShare - Share tab groups as link",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "TabShare is a lightweight extension that lets you share a browser tab group as a link and restore it later.",
   "homepage_url": "https://sidhuachary02.github.io/tabshare-extension/",
   "permissions": ["tabs", "tabGroups", "clipboardWrite", "storage"],

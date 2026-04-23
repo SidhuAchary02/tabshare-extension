@@ -32,7 +32,42 @@
   document.getElementById("preview").style.display = "block";
   document.getElementById("noExtension").style.display = "none";
 
-  document.getElementById("open").onclick = async () => {
+  const openButton = document.getElementById("open");
+  let isImporting = false;
+  let loadingInterval = null;
+
+  const startLoading = () => {
+    const baseText = "Importing";
+    let dotCount = 0;
+    openButton.disabled = true;
+    openButton.style.opacity = "0.7";
+    openButton.style.cursor = "not-allowed";
+    openButton.textContent = baseText + "...";
+
+    loadingInterval = setInterval(() => {
+      dotCount = (dotCount + 1) % 4;
+      openButton.textContent = baseText + ".".repeat(dotCount);
+    }, 350);
+  };
+
+  const stopLoading = () => {
+    if (loadingInterval) {
+      clearInterval(loadingInterval);
+      loadingInterval = null;
+    }
+    openButton.disabled = false;
+    openButton.style.opacity = "";
+    openButton.style.cursor = "";
+    openButton.textContent = "Import All Tabs";
+  };
+
+  openButton.onclick = async () => {
+    if (isImporting) {
+      return;
+    }
+    isImporting = true;
+    startLoading();
+
     console.log("Import button clicked, sending message to content script");
     
     // Send message via postMessage to content script
@@ -54,6 +89,8 @@
       if (event.data.type === "TABSHARE_IMPORT_RESPONSE") {
         window.removeEventListener("message", handleResponse);
         clearTimeout(timeoutId);
+        isImporting = false;
+        stopLoading();
         if (event.data.success) {
           alert("Tab group imported successfully!");
           window.close();
@@ -69,6 +106,8 @@
     const timeoutId = setTimeout(() => {
       window.removeEventListener("message", handleResponse);
       console.error("Timeout waiting for extension response");
+      isImporting = false;
+      stopLoading();
       alert("Failed to import tabs. Make sure the TabShare extension is installed and enabled.");
     }, 10000);
   };
