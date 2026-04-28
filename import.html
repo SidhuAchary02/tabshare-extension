@@ -2,81 +2,136 @@
 <html>
 <head>
   <title>Import Tab Group</title>
+
   <style>
-    body {
-      font-family: system-ui;
-      background: #0f0f0f;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+    body{
+      font-family:system-ui;
+      background:#0f0f0f;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      margin:0;
+      padding:20px;
     }
-    h2 {
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+
+    h2{
+      margin-bottom:20px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:38px;
+      font-weight:700;
     }
-    button {
-      font-weight: bold;
-      padding: 10px 20px;
-      background: #2563eb;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
+
+    button{
+      font-weight:bold;
+      padding:12px 24px;
+      background:#2563eb;
+      color:white;
+      border:none;
+      cursor:pointer;
+      border-radius:6px;
+      font-size:15px;
     }
-    #groupTitle {
-      font-size: 18px;
-      font-weight: bold;
-      color: #fff;
+
+    button:hover{
+      background:#1d4ed8;
     }
-    .tab-item {
-      padding: 10px;
-      margin-bottom: 8px;
-      background: #2a2a2a;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.2s;
+
+    #groupTitle{
+      font-size:22px;
+      font-weight:bold;
+      color:#fff;
     }
-    .tab-item:hover {
-      background: #333;
+
+    .tab-item{
+      padding:10px;
+      margin-bottom:8px;
+      background:#2a2a2a;
+      border-radius:5px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      transition:background .2s;
     }
-    .tab-item a {
-      flex: 1;
-      color: #60a5fa;
-      text-decoration: none;
-      word-break: break-word;
-      font-size: 14px;
+
+    .tab-item:hover{
+      background:#333;
     }
-    .tab-item a:hover {
-      text-decoration: underline;
+
+    .tab-item a{
+      flex:1;
+      color:#60a5fa;
+      text-decoration:none;
+      word-break:break-word;
+      font-size:14px;
     }
-    .tab-icon {
-      font-size: 12px;
-      color: #888;
-      min-width: 20px;
+
+    .tab-icon{
+      font-size:12px;
+      color:#888;
+      min-width:20px;
+    }
+
+    #preview{
+      display:none;
+      width:100%;
+      max-width:650px;
+    }
+
+    #tabsList{
+      background:#1a1a1a;
+      border-radius:8px;
+      padding:15px;
+      max-height:400px;
+      overflow-y:auto;
+      margin-bottom:20px;
+    }
+
+    /* Ad block styling */
+    .ad-box{
+      margin:20px 0 25px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:90px;
     }
   </style>
 </head>
+
 <body>
+
   <h2>
-    <img src="icons/tabshare16.png" alt="">
+    <img src="icons/tabshare48.png" alt="">
     Import Tab Group
   </h2>
-  <button id="open" style="margin-top: 20px;">Import All Tabs</button>
-  
-  <div id="preview" style="display: none; width: 100%; max-width: 600px;">
-    <h3 id="groupTitle" style="margin: 20px 0 10px 0;"></h3>
-    <div id="tabsList" style="background: #1a1a1a; border-radius: 8px; padding: 15px; max-height: 400px; overflow-y: auto; margin-bottom: 20px;"></div>
+
+  <div id="preview">
+
+    <h3 id="groupTitle"></h3>
+
+    <div id="tabsList"></div>
+
+    <!-- ADSTERRA NATIVE BANNER -->
+    <div class="ad-box">
+      <script async="async"
+              data-cfasync="false"
+              src="https://pl29232795.profitablecpmratenetwork.com/fd0b1982154c22e11f9bbbdf0b151eb8/invoke.js">
+      </script>
+
+      <div id="container-fd0b1982154c22e11f9bbbdf0b151eb8"></div>
+    </div>
+
+    <button id="open">
+      Import All Tabs
+    </button>
+
   </div>
-  
 
   <script src="import.js"></script>
+
 </body>
 </html>
