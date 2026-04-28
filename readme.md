@@ -39,4 +39,4 @@ This project was built to understand:
 
 ---
 
-[privacy policy](https://sidhuachary02.github.io/tabshare-extension/privacy/)
+[privacy policy](https://tabshare-six.vercel.app/privacy/)

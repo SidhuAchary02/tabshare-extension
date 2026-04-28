@@ -121,8 +121,8 @@ async function generateShareLink(group, tabs, buttonElement) {
     encodeURIComponent(JSON.stringify(payload))
   );
 
-  // Use public URL (GitHub Pages)
-  const longUrl = `https://sidhuachary02.github.io/tabshare-extension/index-import.html#${encoded}`;
+  // Use public URL (Vercel)
+  const longUrl = `https://tabshare-six.vercel.app/index-import.html#${encoded}`;
 
   // Create a short URL via TinyURL (no server required)
   // Note: TinyURL free API endpoint returns plain text short URL.
