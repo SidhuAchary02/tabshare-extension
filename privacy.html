@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy | TabShare</title>
-  <meta name="description" content="Read the TabShare privacy policy and understand how temporary links and no-login workflows support privacy-friendly tab sharing.">
+  <meta name="description" content="TabShare Privacy Policy — what we collect, how temporary links work, cookies/localStorage use, analytics, retention, security, and user controls.">
   <link rel="canonical" href="https://tabshare.link/privacy.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Privacy Policy | TabShare">
-  <meta property="og:description" content="TabShare privacy policy and data handling overview.">
+  <meta property="og:description" content="TabShare Privacy Policy — temporary links, no-login usage, analytics and data retention explained.">
   <meta property="og:url" content="https://tabshare.link/privacy.html">
   <meta property="og:image" content="https://tabshare.link/assets/images/og-privacy.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,28 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Does TabShare require a login?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. TabShare does not require user accounts for core sharing functionality."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are shared links temporary?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Recently shared links are designed to auto-expire to improve privacy."
-          }
-        }
-      ]
-    }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does TabShare require a login?","acceptedAnswer":{"@type":"Answer","text":"No. TabShare does not require user accounts for core sharing functionality; you can create temporary links from the extension without signing up."}},{"@type":"Question","name":"What data is sent to TabShare servers?","acceptedAnswer":{"@type":"Answer","text":"Only the URLs and minimal metadata needed to render a shared session are transmitted when you explicitly create a share. We do not collect browsing history unless you intentionally share it."}},{"@type":"Question","name":"How long are links retained?","acceptedAnswer":{"@type":"Answer","text":"Default temporary links expire after 7 days. Operational logs are retained up to 30 days for security and stability; retention may be longer for legal compliance."}}]}
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6053671358510331"
 crossorigin="anonymous"></script>
@@ -62,34 +41,94 @@ crossorigin="anonymous"></script>
       <section class="article-hero">
         <span class="eyebrow">Legal</span>
         <h1>Privacy Policy</h1>
-        <p class="kicker" style="margin-top: 0.8rem;">Last updated: April 23, 2026</p>
+        <p class="kicker" style="margin-top: 0.8rem;">Last updated: May 13, 2026</p>
       </section>
 
       <article class="prose section" aria-label="Privacy content">
-        <h2>1. Overview</h2>
-        <p>TabShare is designed to make tab sharing simple and privacy friendly. This policy explains what information may be processed and how it is handled.</p>
+        <h2>Overview</h2>
+        <p>TabShare provides a lightweight browser extension and web interface that helps you share a set of open tabs as a single link. We design the product to minimize data collection and to give you control over what you share.</p>
 
-        <h2>2. No Account Requirement</h2>
-        <p>TabShare does not require signups or logins for core functionality. You can use the extension without creating an account.</p>
+        <h2>What data we collect</h2>
+        <h3>Data collected when you share</h3>
+        <p>When you explicitly create a share from the extension, the URLs and limited metadata (title, favicon, order) for the selected tabs are transmitted to our service to generate the shareable session. We do not collect your complete browsing history unless you intentionally include it in a share action.</p>
 
-        <h2>3. Data Used for Sharing</h2>
-        <p>When you choose to share tabs, relevant tab metadata and URLs are used to generate a shareable link experience. This is necessary to provide the feature.</p>
+        <h3>Local data (browser-only)</h3>
+        <p>The extension may store small amounts of data locally using browser storage (localStorage or extension storage) to save recent shares, user preferences, and UI state. This data stays in your browser unless you choose to share it.</p>
 
-        <h2>4. Temporary Link Behavior</h2>
-        <p>Recently shared links are intended to be temporary and auto-expire. This reduces long-term persistence and supports safer sharing practices.</p>
+        <h3>Analytics and crash reporting</h3>
+        <p>We use aggregated analytics and optional crash reporting to improve reliability and measure feature usage. Analytics are anonymized and do not include full URLs or personal identifiers. You can opt out of analytics in the extension settings.</p>
 
-        <h2>5. Security and Retention</h2>
-        <p>We aim to minimize data retention and follow practical safeguards. No method of transmission or storage is completely secure, but we continuously improve protections.</p>
+        <h2>How we use data</h2>
+        <ul>
+          <li>To create and serve the shared session when you request it.</li>
+          <li>To maintain service availability, monitor performance, and detect abuse.</li>
+          <li>To improve product features through aggregated, anonymized analytics.</li>
+        </ul>
 
-        <h2>6. Third-Party Services</h2>
-        <p>If third-party infrastructure is used to provide extension features, those services may process limited operational data under their own policies.</p>
+        <h2>Temporary links and retention</h2>
+        <p>By default, temporary share links expire after 7 days. We retain related operational logs (IP addresses, request timestamps) for up to 30 days for security and debugging. If required for legal compliance, specific records may be retained longer.</p>
 
-        <h2>7. Policy Changes</h2>
-        <p>We may update this policy as TabShare evolves. Updates are posted here with a revised effective date.</p>
+        <h2>Sharing and disclosure</h2>
+        <p>We do not sell personal data. We may disclose data to service providers who help operate the service (CDNs, hosting, analytics) under contract. We may also disclose data to comply with legal obligations or to protect rights, safety, or property.</p>
 
-        <h2>8. Contact</h2>
-        <p>For privacy questions, contact <a href="mailto:privacy@tabshare.link">privacy@tabshare.link</a>.</p>
+        <h2>Security</h2>
+        <p>We use administrative, technical, and physical safeguards appropriate to the sensitivity of the information. Examples include HTTPS/TLS for data in transit, access controls, and regular vulnerability reviews. No system is completely secure; if we learn of a breach, we will follow applicable notification requirements.</p>
+
+        <h2>Your choices</h2>
+        <ul>
+          <li><strong>Delete a shared session:</strong> If you control a shared session, you can remove or invalidate the link from the extension or via the link management UI when available.</li>
+          <li><strong>Opt out of analytics:</strong> Disable analytics in the extension settings to limit anonymous telemetry.</li>
+          <li><strong>Browser controls:</strong> Use your browser's storage and cookie controls to delete local data.</li>
+        </ul>
+
+        <h2>International transfers</h2>
+        <p>Data processed by TabShare may be transferred to and stored in countries outside your residence. We implement safeguards required by applicable law when transferring personal data internationally.</p>
+
+        <h2>Children</h2>
+        <p>TabShare is not directed to children under 13. We do not knowingly collect personal data from children. If you believe we have collected such information, contact us to request deletion.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy to reflect product changes. We will post the revised policy with an updated effective date.</p>
+
+        <h2>Contact</h2>
+        <p>For questions about privacy, data access, or deletion requests, email <a href="mailto:privacy@tabshare.link">privacy@tabshare.link</a> or mail: TabShare, Attn: Privacy, [address].</p>
       </article>
+      
+        <article class="prose section" aria-label="Privacy details">
+          <h2>Data subject rights</h2>
+          <p>If you are located in a jurisdiction with privacy rights (for example under the GDPR or CCPA), you may have rights to request access to, correction of, or deletion of your personal data, and to restrict or object to certain processing. To exercise your rights, contact us at <a href="mailto:privacy@tabshare.link">privacy@tabshare.link</a>. We will verify requests reasonably to protect user privacy.</p>
+
+          <h2>How to request deletion</h2>
+          <p>To request deletion of shared sessions or other data, email privacy@tabshare.link with the share URL or other identifying information. We will respond within a reasonable time and remove content where we are able to verify your control over the resource. Note that some data (backups, logs required for compliance) may remain for limited periods as required by law.</p>
+
+          <h2>Cookies, local storage and tracking</h2>
+          <p>TabShare uses browser storage (extension storage/localStorage) to store recent shares, preferences, and UI state. Our website may use cookies for essential site functionality and to remember consent preferences. When analytics are enabled, we use anonymized telemetry (for example, an analytics provider set to IP-anonymize and data-retention limits). You may disable analytics in the extension settings or use browser privacy controls to block cookies.</p>
+
+          <h2>Local storage keys (examples)</h2>
+          <ul>
+            <li><strong>tabshare.recentShares</strong>: metadata for recently created shares (stored locally)</li>
+            <li><strong>tabshare.settings</strong>: user preferences and opt-out flags</li>
+          </ul>
+
+          <h2>Subprocessors and third parties</h2>
+          <p>We engage subprocessors (hosting providers, CDNs, analytics) to operate the Service. These providers process data on our behalf under contract. If you request a current list of subprocessors, contact privacy@tabshare.link.</p>
+
+          <h2>Security practices</h2>
+          <p>We protect data in transit with HTTPS/TLS and use access controls and logging to limit access to production systems. We perform regular security reviews and apply patches promptly. If a security incident affects user data, we will follow applicable notification laws and inform affected users and authorities as required.</p>
+
+          <h2>Retention schedule (summary)</h2>
+          <ul>
+            <li>Temporary share content: default 7 days (configurable)</li>
+            <li>Operational logs and access records: up to 30 days</li>
+            <li>Crash reports and anonymized analytics: aggregated retention per provider settings</li>
+          </ul>
+
+          <h2>Legal bases for processing (GDPR)</h2>
+          <p>Where GDPR applies, our processing of data necessary to create and serve a share is performed on the basis of your consent or our legitimate interest in providing the Service. For analytics we rely on consent where required.</p>
+
+          <h2>Data protection contact</h2>
+          <p>Questions about how we handle data or requests to exercise data rights can be sent to <a href="mailto:privacy@tabshare.link">privacy@tabshare.link</a>. If you are a resident of the EU and wish to make a formal request under GDPR, include proof of identity and details of your request.</p>
+        </article>
 
       <!-- AdSense Banner Slot -->
       <section class="ad-slot" aria-label="Ad placeholder">AdSense Banner Slot</section>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://tabshare-six.vercel.app/sitemap.xml
+
+# Do not place private URLs here; robots.txt is public.

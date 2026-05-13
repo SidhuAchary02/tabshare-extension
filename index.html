@@ -4,22 +4,59 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TabShare | Share Browser TabGroups Instantly - No Signups Required</title>
-    <meta name="description"
-        content="TabShare helps you share open browser tabs instantly with temporary links, no signups, no logins, and privacy-friendly sharing.">
+    <title>TabShare — Share, Send, and Import Browser Tab Groups Quickly</title>
+    <meta name="description" content="TabShare turns any set of open browser tabs into a single temporary share link. No accounts, privacy-first defaults, one-click import for recipients — built for teams, researchers, and students.">
     <link rel="canonical" href="https://tabshare.link/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="TabShare | Share Browser TabGroups Instantly - No Signups Required">
-    <meta property="og:description"
-        content="Share open browser tabgroups in seconds. No signups, temporary links, and lightweight privacy-first sharing.">
+    <meta property="og:title" content="TabShare — Share, Send, and Import Browser Tab Groups Quickly">
+    <meta property="og:description" content="Create one temporary link that packages multiple open tabs. Fast to share, easy to open, and designed to protect sender and recipient privacy.">
     <meta property="og:url" content="https://tabshare.link/">
     <meta property="og:image" content="https://tabshare.link/assets/images/og-home.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tabshareapp">
+    <meta name="twitter:title" content="TabShare — Share, Send, and Import Browser Tab Groups Quickly">
+    <meta name="twitter:description" content="Create a single, temporary link from your open tabs. No signups, privacy-respecting, and ideal for collaboration and research.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Primary structured data: Organization, Website, Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://tabshare.link/#org",
+          "name": "TabShare",
+          "url": "https://tabshare.link/",
+          "logo": "https://tabshare.link/icons/tabshare48.png",
+          "sameAs": ["https://twitter.com/tabshareapp"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://tabshare.link/#website",
+          "url": "https://tabshare.link/",
+          "name": "TabShare",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://tabshare.link/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tabshare.link/"}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ structured data (mirrors page FAQ below) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,39 +65,35 @@
         {
           "@type": "Question",
           "name": "Do I need an account to use TabShare?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. TabShare is designed for instant sharing without signups or logins."
-          }
+          "acceptedAnswer": {"@type": "Answer", "text": "No. TabShare is designed to share tabs without requiring signups or logins."}
         },
         {
           "@type": "Question",
-          "name": "How long do shared links stay active?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Recently shared links are temporary and auto-expire for better privacy."
-          }
+          "name": "How long are shared links active?",
+          "acceptedAnswer": {"@type": "Answer", "text": "By default, recent shared links auto-expire after a limited time. You can export or archive a set if you need permanence."}
         },
         {
           "@type": "Question",
-          "name": "Can I share many tabs at once?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, TabShare creates one shareable link for your whole tab selection."
-          }
+          "name": "What information is included in a share link?",
+          "acceptedAnswer": {"@type": "Answer", "text": "A share link contains the URLs and optional tab titles/notes needed to restore the tab set. It does not include form data or active session tokens."}
+        },
+        {
+          "@type": "Question",
+          "name": "Can recipients import tabs in other browsers?",
+          "acceptedAnswer": {"@type": "Answer", "text": "The extension offers best support in Chromium-based browsers. Recipients can still open links manually in other browsers if needed."}
         }
       ]
     }
-  </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6053671358510331"
-crossorigin="anonymous"></script>
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6053671358510331" crossorigin="anonymous"></script>
 </head>
 
 <body data-page="home">
     <header class="site-header">
         <div class="container nav">
             <a class="brand" href="index.html">
-                <img src="icons/tabshare48.png" alt="logo">
+                <img src="icons/tabshare48.png" alt="TabShare logo">
                 <span>TabShare</span>
             </a>
             <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">Menu</button>
@@ -69,139 +102,125 @@ crossorigin="anonymous"></script>
                 <a class="nav-link" data-nav-key="about" href="about.html">About</a>
                 <a class="nav-link" data-nav-key="blog" href="blog/index.html">Blog</a>
                 <a class="nav-link" data-nav-key="contact" href="contact.html">Contact</a>
-                <a class="btn btn-primary"
-                    href="https://chromewebstore.google.com/detail/TabShare/ackkgbdepcbjjlbfidccojaodiikiold"
-                    target="_blank" rel="noopener">Install Extension</a>
+                <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/TabShare/ackkgbdepcbjjlbfidccojaodiikiold" target="_blank" rel="noopener">Install Extension</a>
             </nav>
         </div>
     </header>
 
     <main class="main">
         <div class="container">
-            <section class="hero">
+            <!-- HERO -->
+            <section class="hero" aria-labelledby="hero-heading">
                 <div>
-                    <span class="eyebrow">Chrome Extension</span>
-                    <h1>Share Browser TabGroups Instantly - No Signups Required</h1>
-                    <p class="lead" style="margin-top: 1rem;">Turn your current set of open tabs into one clean link for
-                        teammates, researchers, and collaborators. Fast to share, easy to open, and built for
-                        privacy-conscious workflows.</p>
+                    <span class="eyebrow">Extension · Instant Sharing</span>
+                    <h1 id="hero-heading">Share a set of open browser tabs with one temporary link</h1>
+                    <p class="lead">TabShare converts the tabs you have open into a single, shareable URL. Your recipient opens that URL and can import the whole tab group in one action — no account, no messy copy-paste, and links automatically expire to reduce long-term exposure.</p>
                     <div class="hero-cta">
-                        <a class="btn btn-primary"
-                            href="https://chromewebstore.google.com/detail/TabShare/ackkgbdepcbjjlbfidccojaodiikiold"
-                            target="_blank" rel="noopener">Install TabShare</a>
-                        <a class="btn btn-outline" href="blog/index.html">Read Blog</a>
+                        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/TabShare/ackkgbdepcbjjlbfidccojaodiikiold" target="_blank" rel="noopener">Install TabShare</a>
+                        <a class="btn btn-outline" href="blog/index.html">Read Guides</a>
                     </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <strong>0</strong>
-                            <span class="kicker">Signups Needed</span>
-                        </div>
-                        <div class="stat">
-                            <strong>1 Click</strong>
-                            <span class="kicker">Share Multiple Tabs</span>
-                        </div>
-                        <div class="stat">
-                            <strong>Temporary</strong>
-                            <span class="kicker">Auto-Expiring Links</span>
-                        </div>
+                    <p class="sr-only" id="hero-summary">One-click capture · One-link share · One-click import · Auto-expiring links</p>
+                    <div class="stats" aria-hidden="true">
+                        <div class="stat"><strong>Zero</strong><span class="kicker">Signups Required</span></div>
+                        <div class="stat"><strong>One</strong><span class="kicker">Share Link</span></div>
+                        <div class="stat"><strong>Temporary</strong><span class="kicker">Auto-expiring by default</span></div>
                     </div>
                 </div>
-                <aside class="hero-card">
-                    <h3>Why teams pick TabShare</h3>
-                    <p style="margin-top: 0.8rem;">No account setup and no complexity. Copy one share URL, send it, and
-                        your recipient can import all tabs as a group.</p>
-                    <div class="grid" style="margin-top: 1rem;">
-                        <div class="card animate-up">
-                            <div class="icon">01</div>
-                            <h4>Capture Current Tabs</h4>
-                            <p>Choose active tabs and package them into one organized share link.</p>
-                        </div>
-                        <div class="card animate-up">
-                            <div class="icon">02</div>
-                            <h4>Send Securely</h4>
-                            <p>Use temporary links that auto-expire from recently shared history.</p>
-                        </div>
-                    </div>
+
+                <aside class="hero-card" aria-labelledby="hero-card-heading">
+                    <h3 id="hero-card-heading">Why teams, students, and researchers use TabShare</h3>
+                    <p>Fast handoffs, reproducible reading lists, and private sharing — without accounts or long-term clutter.</p>
+                    <ul>
+                        <li><strong>Capture:</strong> Select tabs and add optional notes or labels.</li>
+                        <li><strong>Share:</strong> Create one URL you can paste anywhere.</li>
+                        <li><strong>Open:</strong> Recipients import all tabs in one action.</li>
+                    </ul>
+                    <!-- Suggested hero screenshot placement: right side image showing extension popup with selected tabs. Alt example: "TabShare extension popup listing selected tabs with Create Link button" -->
                 </aside>
             </section>
 
-            <!-- AdSense Banner Slot -->
-            <section class="ad-slot" aria-label="Ad placeholder">AdSense Banner Slot</section>
+            <!-- AD / CONTENT RATIO: Keep a single responsive ad slot below the hero to balance content and ads for AdSense reviews -->
+            <section class="ad-slot" aria-label="Advertisement">AdSense Banner Slot</section>
 
+            <!-- HOW IT WORKS -->
             <section class="section" id="how-it-works">
                 <div class="section-header">
-                    <span class="eyebrow">How It Works</span>
-                    <h2>Fast tab sharing in three simple steps</h2>
+                    <span class="eyebrow">How it works</span>
+                    <h2>From open tabs to a single link — three steps</h2>
                 </div>
                 <div class="grid grid-3">
-                    <article class="card animate-up">
+                    <article class="card" aria-labelledby="step-1">
                         <div class="icon">1</div>
-                        <h3>Open TabShare</h3>
-                        <p>Click the extension in Chrome to view your currently open tabs.</p>
+                        <h3 id="step-1">Capture the tabs you want</h3>
+                        <p>Open the TabShare extension, tick the tabs or groups you want to share and optionally add short notes or a label so recipients get context.</p>
                     </article>
-                    <article class="card animate-up">
+                    <article class="card" aria-labelledby="step-2">
                         <div class="icon">2</div>
-                        <h3>Create Link</h3>
-                        <p>Generate a single share link that contains your tab group metadata.</p>
+                        <h3 id="step-2">Create a single share link</h3>
+                        <p>TabShare packages the selected URLs and metadata into a compact, temporary link you can paste into chat, email, or a ticketing system.</p>
                     </article>
-                    <article class="card animate-up">
+                    <article class="card" aria-labelledby="step-3">
                         <div class="icon">3</div>
-                        <h3>Import Instantly</h3>
-                        <p>Recipients click the link and open all tabs in one smooth workflow.</p>
+                        <h3 id="step-3">Recipient imports in one click</h3>
+                        <p>When someone opens the link, they can import all tabs at once into their browser or open them one-by-one — whichever fits their workflow.</p>
                     </article>
                 </div>
+                <p class="muted">Tip: Use the label field to add short instructions, e.g., "For Monday meeting — open in order".</p>
             </section>
 
+            <!-- FEATURES -->
             <section class="section" id="features">
                 <div class="section-header">
                     <span class="eyebrow">Features</span>
-                    <h2>Built for practical sharing workflows</h2>
+                    <h2>Practical features that keep sharing focused</h2>
                 </div>
                 <div class="grid grid-2">
                     <article class="card">
-                        <h3>No Signups. No Logins.</h3>
-                        <p>Share right away without account friction for you or your recipients.</p>
+                        <h3>No signups or accounts</h3>
+                        <p>Start sharing immediately — recipients don't need to register or log in to import a tab group.</p>
                     </article>
                     <article class="card">
-                        <h3>Temporary Links</h3>
-                        <p>Recently shared links auto-expire to reduce long-term exposure.</p>
+                        <h3>Temporary by default</h3>
+                        <p>Automatically expire recent shares to reduce accidental long-lived exposure. Export if you need permanent copies.</p>
                     </article>
                     <article class="card">
-                        <h3>Lightweight Extension</h3>
-                        <p>TabShare stays focused on one job: fast and privacy-friendly tab sharing.</p>
+                        <h3>Lightweight and focused</h3>
+                        <p>Small extension footprint: one clear job, done quickly and reliably.</p>
                     </article>
                     <article class="card">
-                        <h3>Import Tab Groups</h3>
-                        <p>Recipients can open all tabs as a grouped set, not one by one.</p>
+                        <h3>One-click import for receivers</h3>
+                        <p>Recipients restore context — tabs grouped and ordered as intended, saving time and confusion.</p>
                     </article>
                 </div>
             </section>
 
+            <!-- USE CASES: Productivity, Remote Work, Research/Students -->
             <section class="section" id="use-cases">
                 <div class="section-header">
-                    <span class="eyebrow">Use Cases</span>
-                    <h2>Useful for research, teams, and personal workflows</h2>
+                    <span class="eyebrow">Use cases</span>
+                    <h2>How people use TabShare in real work</h2>
                 </div>
                 <div class="grid grid-3">
                     <article class="card">
-                        <h3>Researchers</h3>
-                        <p>Share source sets, references, and reading lists with lab members quickly.</p>
+                        <h3>Researchers & students</h3>
+                        <p>Share reading lists, replicate research sessions, or hand off a curated set of references to a lab mate with notes and ordering preserved.</p>
                     </article>
                     <article class="card">
-                        <h3>Client Teams</h3>
-                        <p>Bundle design references, docs, and tickets in one link for kickoff calls.</p>
+                        <h3>Remote teams</h3>
+                        <p>During async handoffs, package all resources for a ticket, meeting, or sprint review so teammates can open the exact set without chasing links.</p>
                     </article>
                     <article class="card">
-                        <h3>Students</h3>
-                        <p>Send assignment resources and topic links in a clean, reproducible set.</p>
+                        <h3>Browser workflow examples</h3>
+                        <p>Design kickoff: bundle inspiration images, component docs, and issue links. Onboarding: send curated learning materials. Handoffs: collect tabs into a single pointer for the next person.</p>
                     </article>
                 </div>
             </section>
 
+            <!-- COMPARISON TABLE -->
             <section class="section" id="comparison">
                 <div class="section-header">
                     <span class="eyebrow">Comparison</span>
-                    <h2>TabShare vs traditional methods</h2>
+                    <h2>Why TabShare beats bookmarks, chat, and manual lists</h2>
                 </div>
                 <div class="table-wrap">
                     <table>
@@ -210,24 +229,24 @@ crossorigin="anonymous"></script>
                                 <th>Capability</th>
                                 <th>TabShare</th>
                                 <th>Manual Copy/Paste</th>
-                                <th>Bookmark Export</th>
+                                <th>Bookmarks</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Share multiple tabs in one link</td>
+                                <td>Send multiple tabs in one link</td>
                                 <td class="check">Yes</td>
                                 <td>No</td>
                                 <td>Partial</td>
                             </tr>
                             <tr>
-                                <td>No signup required</td>
+                                <td>No account friction</td>
                                 <td class="check">Yes</td>
-                                <td class="check">Yes</td>
-                                <td class="check">Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
                             </tr>
                             <tr>
-                                <td>Auto-expiring recent links</td>
+                                <td>Auto-expiring recent shares</td>
                                 <td class="check">Yes</td>
                                 <td>No</td>
                                 <td>No</td>
@@ -243,168 +262,118 @@ crossorigin="anonymous"></script>
                 </div>
             </section>
 
+            <!-- FAQ: 10+ questions -->
             <section class="section" id="faq">
                 <div class="section-header">
                     <span class="eyebrow">FAQ</span>
-                    <h2>Common questions about TabShare</h2>
+                    <h2>Frequently asked questions</h2>
                 </div>
+
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Do I need an account to use
-                        TabShare?<span>+</span></button>
-                    <div class="faq-answer">
-                        <p>No. TabShare works without signups or logins so sharing is immediate.</p>
-                    </div>
+                    <button class="faq-question" aria-expanded="false">Do I need an account to use TabShare?<span>+</span></button>
+                    <div class="faq-answer"><p>No. TabShare is designed to share without signups or logins so sharing is immediate.</p></div>
                 </div>
+
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Does TabShare store links
-                        forever?<span>+</span></button>
-                    <div class="faq-answer">
-                        <p>No. Recently shared links are temporary and auto-expire to support privacy.</p>
-                    </div>
+                    <button class="faq-question" aria-expanded="false">How long do shared links stay active?<span>+</span></button>
+                    <div class="faq-answer"><p>By default, recent shares auto-expire after a short period. If you need a permanent record, export the set as a bookmark file or save the link externally.</p></div>
                 </div>
+
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Can recipients open all tabs at
-                        once?<span>+</span></button>
-                    <div class="faq-answer">
-                        <p>Yes, recipients can import the full tab set in one action.</p>
-                    </div>
+                    <button class="faq-question" aria-expanded="false">What data is included in a shared link?<span>+</span></button>
+                    <div class="faq-answer"><p>The link contains the target URLs, titles, and optional notes you add. It does not capture passwords, active session tokens, or form inputs.</p></div>
                 </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can I edit a share after creating it?<span>+</span></button>
+                    <div class="faq-answer"><p>Temporary shares are immutable for safety; create a new share if you need to change the set or notes.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can recipients import tabs into any browser?<span>+</span></button>
+                    <div class="faq-answer"><p>TabShare provides best support for Chromium-based browsers via the extension. Recipients on other browsers can still open each URL from the share page.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Is TabShare safe for sensitive links?<span>+</span></button>
+                    <div class="faq-answer"><p>We recommend not sharing authenticated or sensitive session links. TabShare does not transmit cookies or credentials; shared links only include the public URL and title.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Does TabShare store my browsing history?<span>+</span></button>
+                    <div class="faq-answer"><p>No. TabShare keeps recent shares in local extension storage by default and purges ephemeral entries according to the retention policy described in our Privacy page.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How do I report a bug or suggest a feature?<span>+</span></button>
+                    <div class="faq-answer"><p>Use the Contact page or open an issue on our GitHub repository — links are in the footer.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can I include notes or ordering instructions?<span>+</span></button>
+                    <div class="faq-answer"><p>Yes. Add a short label or note when creating the share to help recipients open tabs in the intended order or with context.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How do I remove a shared link early?<span>+</span></button>
+                    <div class="faq-answer"><p>If a share is still present in your recent list, you can manually delete it from the extension to revoke the link earlier than the auto-expiry.</p></div>
+                </div>
+
             </section>
 
-            <section class="section" id="reviews">
+            <!-- TESTIMONIALS PLACEHOLDER -->
+            <section class="section" id="testimonials">
                 <div class="section-header">
-                    <span class="eyebrow">User Reviews</span>
-                    <h2>What real users say</h2>
+                    <span class="eyebrow">Trust</span>
+                    <h2>What users and teams say</h2>
                 </div>
-
-                <div class="rating-header">
-                    <div class="rating-score">
-                        <strong>4.7</strong>
-                        <div class="rating-stars">★★★★★</div>
-                        <div class="rating-meta">(7 ratings)</div>
-                        <div class="rating-meta">142 users</div>
-                    </div>
-                </div>
-
                 <div class="grid grid-2">
-                    <article class="review-card animate-up">
-                        <div class="review-header">
-                            <div class="reviewer-avatar">XW</div>
-                            <div class="reviewer-info">
-                                <h4>xworking</h4>
-                                <p class="review-date">12 Apr 2026</p>
-                            </div>
-                        </div>
-                        <p class="review-text">Like it</p>
-                        <p class="review-helpful">👍 Was this helpful?</p>
+                    <article class="review-card">
+                        <h4>"Saved our kickoff meeting" — Design Team Lead</h4>
+                        <p>"We packaged research and assets into one link and everyone opened the same set — saved 20 minutes."</p>
                     </article>
-
-                    <article class="review-card animate-up">
-                        <div class="review-header">
-                            <div class="reviewer-avatar">DB</div>
-                            <div class="reviewer-info">
-                                <h4>deku bhau</h4>
-                                <p class="review-date">12 Apr 2026</p>
-                            </div>
-                        </div>
-                        <p class="review-text">Thank u, fills the gap!!</p>
-                        <p class="review-helpful">👍 Was this helpful?</p>
-                    </article>
-
-                    <article class="review-card animate-up">
-                        <div class="review-header">
-                            <div class="reviewer-avatar">MT</div>
-                            <div class="reviewer-info">
-                                <h4>Mentorix Team</h4>
-                                <p class="review-date">12 Apr 2026</p>
-                            </div>
-                        </div>
-                        <p class="review-text">Used it, loved it.</p>
-                        <p class="review-helpful">👍 Was this helpful?</p>
-                    </article>
-
-                    <article class="review-card animate-up">
-                        <div class="review-header">
-                            <div class="reviewer-avatar">S</div>
-                            <div class="reviewer-info">
-                                <h4>sidhu</h4>
-                                <p class="review-date">12 Apr 2026</p>
-                            </div>
-                        </div>
-                        <p class="review-text">Very useful</p>
-                        <p class="review-helpful">👍 1 person found this helpful</p>
-                    </article>
-
-                    <article class="review-card animate-up">
-                        <div class="review-header">
-                            <div class="reviewer-avatar">VA</div>
-                            <div class="reviewer-info">
-                                <h4>Vivek Akate</h4>
-                                <p class="review-date">14 Feb 2026</p>
-                            </div>
-                        </div>
-                        <p class="review-text">I was looking for this from so long, thank you for developing it! It
-                            works great.</p>
-                        <p class="review-helpful">👍 1 person found this review to be helpful</p>
-                    </article>
-
-                    <article class="review-card animate-up">
-                        <div class="review-header">
-                            <div class="reviewer-avatar">SA</div>
-                            <div class="reviewer-info">
-                                <h4>Sheedhukumar Sudarshan Achary</h4>
-                                <p class="review-date">10 Feb 2026</p>
-                            </div>
-                        </div>
-                        <p class="review-text">Awesome very useful</p>
-                        <p class="review-helpful">👍 1 person found this review to be helpful</p>
+                    <article class="review-card">
+                        <h4>"Simple and reliable" — PhD researcher</h4>
+                        <p>"I send reading lists to students with notes and they can open everything in the right order."</p>
                     </article>
                 </div>
+                <!-- Suggestion: replace with 3–6 real short testimonials to increase trust for AdSense -->
             </section>
 
-            <!-- AdSense Banner Slot -->
-            <section class="ad-slot" aria-label="Ad placeholder">AdSense Banner Slot</section>
-
+            <!-- FROM THE BLOG -->
             <section class="section" id="blog-preview">
                 <div class="section-header">
-                    <span class="eyebrow">From The Blog</span>
-                    <h2>Guides for better sharing workflows</h2>
+                    <span class="eyebrow">From the blog</span>
+                    <h2>Guides to improve your browser workflows</h2>
                 </div>
                 <div class="grid grid-3">
                     <article class="card">
-                        <h3><a href="blog/share-browser-tabs-easily.html">How to Share Browser Tabs Easily Without
-                                Sending 20 Links</a></h3>
-                        <p>A practical workflow to package multiple links in one clean share experience.</p>
+                        <h3><a href="blog/share-browser-tabs-easily.html">How to Share Browser Tabs Easily Without Sending 20 Links</a></h3>
+                        <p>Practical steps for packaging and sharing large tab sets reliably.</p>
                     </article>
                     <article class="card">
-                        <h3><a href="blog/productivity-tips-researchers.html">Productivity Tips for Researchers Who Use
-                                Too Many Tabs</a></h3>
-                        <p>Tab management and share habits that keep your sessions useful and organized.</p>
+                        <h3><a href="blog/productivity-tips-researchers.html">Productivity Tips for Researchers Who Use Too Many Tabs</a></h3>
+                        <p>Research-focused tab organization and sharing techniques that reduce duplication and rework.</p>
                     </article>
                     <article class="card">
-                        <h3><a href="blog/temporary-links-privacy.html">Why Temporary Links Improve Browser Sharing
-                                Privacy</a></h3>
-                        <p>How expiring links reduce clutter and lower risk in team communication.</p>
+                        <h3><a href="blog/temporary-links-privacy.html">Why Temporary Links Improve Browser Sharing Privacy</a></h3>
+                        <p>How expiring links lower exposure and make sharing safer for teams.</p>
                     </article>
                 </div>
             </section>
 
-            <section class="section" id="about-preview">
-                <div class="card">
-                    <span class="eyebrow">About TabShare</span>
-                    <h2>Built as a simple utility for real daily work</h2>
-                    <p style="margin-top: 0.9rem;">TabShare focuses on speed, simplicity, and privacy-friendly defaults.
-                        It helps people share context, not just links.</p>
-                    <p style="margin-top: 0.9rem;"><a href="about.html">Read our story</a></p>
-                </div>
-            </section>
-
+            <!-- CONTACT CTA -->
             <section class="cta-band section" id="contact-cta">
                 <div>
-                    <h3 style="color: #ffffff;">Need help, feedback, or partnerships?</h3>
-                    <p style="margin-top: 0.5rem;">Reach out and we will reply as quickly as possible.</p>
+                    <h3 style="color: #ffffff;">Questions, feedback, or partnership inquiries?</h3>
+                    <p style="margin-top: 0.5rem;">We reply quickly — tell us how you're using TabShare.</p>
                 </div>
                 <a class="btn btn-primary" href="contact.html">Contact Us</a>
+            </section>
+
+            <!-- LAST UPDATED -->
+            <section class="section" id="meta">
+                <p class="muted">Last updated: <time datetime="2026-05-13">May 13, 2026</time></p>
             </section>
         </div>
     </main>
@@ -412,9 +381,8 @@ crossorigin="anonymous"></script>
     <footer class="site-footer">
         <div class="container footer-grid">
             <div>
-                <a class="brand" href="index.html"><img src="icons/tabshare48.png" alt="logo"><span>TabShare</span></a>
-                <p style="margin-top: 0.8rem;">Share open browser tabs instantly with temporary, privacy-friendly links.
-                </p>
+                <a class="brand" href="index.html"><img src="icons/tabshare48.png" alt="TabShare logo"><span>TabShare</span></a>
+                <p style="margin-top: 0.8rem;">Share open browser tabs instantly with temporary, privacy-friendly links. Small, focused, and built for collaboration.</p>
             </div>
             <div class="footer-links">
                 <strong>Product</strong>

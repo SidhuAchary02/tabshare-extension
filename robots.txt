@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://tabshare-six.vercel.app/sitemap.xml
+
+# Respect crawl guidelines. If you need a custom rule for specific bots,
+# add them above. Do not rely on robots.txt for sensitive data protection.

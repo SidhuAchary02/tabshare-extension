@@ -1,167 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Import Tab Group</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import Tab Group Preview | TabShare</title>
+  <meta name="description" content="Preview and import a shared TabShare tab group in one click.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://tabshare.link/index-import.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Import Tab Group Preview | TabShare">
+  <meta property="og:description" content="Preview a shared tab group and import all tabs with TabShare.">
+  <meta property="og:url" content="https://tabshare.link/index-import.html">
+  <meta property="og:image" content="https://tabshare.link/assets/images/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Import Tab Group Preview | TabShare">
+  <meta name="twitter:description" content="Preview a shared tab group and import all tabs with TabShare.">
+  <meta name="twitter:image" content="https://tabshare.link/assets/images/og-home.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Import Tab Group Preview","url":"https://tabshare.link/index-import.html","description":"Preview and import a shared TabShare tab group.","isPartOf":{"@type":"WebSite","name":"TabShare","url":"https://tabshare.link/"}}
+  </script>
 
   <style>
-    body{
-      font-family:system-ui;
-      background:#0f0f0f;
-      color:#fff;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      margin:0;
-      padding:20px;
+    body {
+      font-family: system-ui;
+      background: #0f0f0f;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
 
-    h2{
-      margin-bottom:20px;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    h2 {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    button{
-      font-weight:bold;
-      padding:10px 20px;
-      background:#2563eb;
-      color:white;
-      border:none;
-      cursor:pointer;
-      border-radius:5px;
+    button {
+      font-weight: bold;
+      padding: 10px 20px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
     }
 
-    button:hover{
-      background:#1d4ed8;
+    button:hover {
+      background: #1d4ed8;
     }
 
-    #groupTitle{
-      font-size:18px;
-      font-weight:bold;
-      color:#fff;
+    #groupTitle {
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
     }
 
-    .tab-item{
-      padding:10px;
-      margin-bottom:8px;
-      background:#2a2a2a;
-      border-radius:5px;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .tab-item {
+      padding: 10px;
+      margin-bottom: 8px;
+      background: #2a2a2a;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .tab-item:hover{
-      background:#333;
+    .tab-item:hover {
+      background: #333;
     }
 
-    .tab-item a{
-      flex:1;
-      color:#60a5fa;
-      text-decoration:none;
-      word-break:break-word;
-      font-size:14px;
+    .tab-item a {
+      flex: 1;
+      color: #60a5fa;
+      text-decoration: none;
+      word-break: break-word;
+      font-size: 14px;
     }
 
-    .tab-icon{
-      font-size:12px;
-      color:#888;
-      min-width:20px;
+    .tab-icon {
+      font-size: 12px;
+      color: #888;
+      min-width: 20px;
     }
 
-    .install-note{
-      background:#1e3a5f;
-      border:1px solid #3b82f6;
-      padding:12px;
-      border-radius:5px;
-      margin-top:20px;
-      font-size:14px;
-      max-width:600px;
+    .install-note {
+      background: #1e3a5f;
+      border: 1px solid #3b82f6;
+      padding: 12px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 14px;
+      max-width: 600px;
     }
 
-    .install-link{
-      color:#60a5fa;
-      text-decoration:none;
-      font-weight:bold;
+    .install-link {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .ad-box{
-      margin:20px 0;
-      display:flex;
-      justify-content:center;
-      min-height:90px;
+    .ad-box {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      min-height: 90px;
     }
-
   </style>
 </head>
 
 <body>
 
-<h2>
-<img src="imgs/tabshare48.png"
-alt="tabshare logo"
-style="width:24px;height:24px;">
-Import Tab Group
-</h2>
+  <h2>
+    <img src="imgs/tabshare48.png" alt="tabshare logo" style="width:24px;height:24px;">
+    Import Tab Group
+  </h2>
 
-<div id="preview"
-style="display:none;width:100%;max-width:600px;">
+  <div id="preview" style="display:none;width:100%;max-width:600px;">
 
-<h3 id="groupTitle"
-style="margin:20px 0 10px 0;">
-</h3>
+    <h3 id="groupTitle" style="margin:20px 0 10px 0;">
+    </h3>
 
-<div id="tabsList"
-style="
+    <div id="tabsList" style="
 background:#1a1a1a;
 border-radius:8px;
 padding:15px;
 max-height:400px;
 overflow-y:auto;
 margin-bottom:20px;">
-</div>
+    </div>
 
-<!-- ADSTERRA NATIVE AD -->
-<div class="ad-box">
+    <!-- ADSTERRA NATIVE AD -->
+    <div class="ad-box">
 
-<script async="async"
-data-cfasync="false"
-src="https://pl29232795.profitablecpmratenetwork.com/fd0b1982154c22e11f9bbbdf0b151eb8/invoke.js">
-</script>
+      <script async="async" data-cfasync="false"
+        src="https://pl29232795.profitablecpmratenetwork.com/fd0b1982154c22e11f9bbbdf0b151eb8/invoke.js">
+        </script>
 
-<div id="container-fd0b1982154c22e11f9bbbdf0b151eb8"></div>
+      <div id="container-fd0b1982154c22e11f9bbbdf0b151eb8"></div>
 
-</div>
+    </div>
 
-<button id="open">
-Import All Tabs
-</button>
+    <button id="open">
+      Import All Tabs
+    </button>
 
-</div>
+  </div>
 
-<div id="noExtension"
-style="display:none;text-align:center;">
+  <div id="noExtension" style="display:none;text-align:center;">
 
-<p style="color:#888;margin-bottom:15px;">
-To import this tab group, you need the TabShare extension.
-</p>
+    <p style="color:#888;margin-bottom:15px;">
+      To import this tab group, you need the TabShare extension.
+    </p>
 
-<a href="https://chromewebstore.google.com/detail/TabShare/ackkgbdepcbjjlbfidccojaodiikiold"
-target="_blank"
-class="install-link">
-Install TabShare from Chrome Web Store
-</a>
+    <a href="https://chromewebstore.google.com/detail/TabShare/ackkgbdepcbjjlbfidccojaodiikiold" target="_blank"
+      class="install-link">
+      Install TabShare from Chrome Web Store
+    </a>
 
-<div class="install-note">
-After installing, come back to this page and click "Import All Tabs" to add these tabs to your browser.
-</div>
+    <div class="install-note">
+      After installing, come back to this page and click "Import All Tabs" to add these tabs to your browser.
+    </div>
 
-</div>
+  </div>
 
-<script src="index-import.js"></script>
+  <script src="index-import.js"></script>
 
 </body>
+
 </html>
